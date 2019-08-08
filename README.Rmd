@@ -1,0 +1,102 @@
+---
+title: "electivity: Algorithms for electivity indices and measures of resource use versus availability"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This package is essentially Lechowicz (1982) turned into an R package. It includes
+all algorithms that were described therein plus the example data that
+was provided for gypsy moth resource utilisation.
+
+Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
+Oecologia 52, 22–30. https://doi.org/10.1007/BF00349007
+
+Users are encouraged to read the original paper before deciding which algorithm
+is most useful for them. Lechowicz recommended Vanderploeg and Scavia's E* index
+(implemented in this package as `vs_electivity()`) as "the single best, but not
+perfect, electivity index" because "E* embodies a measure of the feeder's
+perception of a food's value as a function of both its abundance and the
+abundance of other food types present." In practice, he found that all indices
+returned nearly identical rank orders of preferred hosts except for Strauss'
+linear index (L).
+
+
+## Installing
+
+```{r echo=TRUE, eval=FALSE}
+# Installing from CRAN (not yet!)
+install.packages(electivity)
+
+# Installing from GitHub
+install.packages(remotes)
+remotes::install_github("DesiQuintans/electivity")
+
+library(electivity)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(electivity)
+```
+
+
+## Built-in datasets
+
+```{r}
+data(moth_distrib)  # Table 2 from Lechowicz (1982), raw data
+data(moth_elect)    # Table 3 from Lechowicz (1982), calculated indices
+
+head(moth_distrib)
+head(moth_elect)
+```
+
+
+## Examples
+
+### Calculating food preference for a single animal
+
+```{r}
+gypsy_moth_prefs <- vs_electivity(moth_distrib$r, moth_distrib$p)
+
+names(gypsy_moth_prefs) <- moth_distrib$binomen
+
+sort(gypsy_moth_prefs, decreasing = TRUE)
+```
+
+### Calculating food preference for many animals at many sites (Tidy approach)
+
+```{r message=FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(purrr)
+
+# Example data
+df <- tibble::tribble(
+           ~snail,     ~site,      ~food, ~pieces_eaten, ~pieces_present,
+           "Bert", "outside",   "Carrot",             3,               7,
+           "Bert", "outside", "Broccoli",             3,               8,
+           "Bert", "outside",     "Kale",             1,               1,
+           "Bert",  "inside",   "Carrot",             5,              11,
+           "Bert",  "inside", "Broccoli",             7,               3,
+           "Bert",  "inside",     "Kale",             2,               4,
+          "Ernie", "outside",   "Carrot",             6,               7,
+          "Ernie", "outside", "Broccoli",             4,               8,
+          "Ernie", "outside",     "Kale",             1,               1,
+          "Ernie",  "inside",   "Carrot",             3,              11,
+          "Ernie",  "inside", "Broccoli",             1,               3,
+          "Ernie",  "inside",     "Kale",             4,               4
+          )
+
+
+prefs <- 
+    df %>% 
+    nest(-snail, -site) %>% 
+    mutate(score = map(data, ~ vs_electivity(.$pieces_eaten, .$pieces_present))) %>% 
+    unnest(score, data) %>% 
+    select(-pieces_eaten, -pieces_present) %>% 
+    spread(key = site, value = score)
+
+knitr::kable(prefs, format = "markdown")
+```
