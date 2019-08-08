@@ -5,14 +5,17 @@
 \alias{vs_select_coef}
 \title{Chesson's alpha, or Vanderploeg and Scavia's selectivity coefficient (W)}
 \usage{
-chesson_alpha(r, p)
+chesson_alpha(r, p, na.rm = TRUE)
 
-vs_select_coef(r, p)
+vs_select_coef(r, p, na.rm = TRUE)
 }
 \arguments{
 \item{r}{(Numeric) Resource utilisation.}
 
 \item{p}{(Numeric) Resource availability.}
+
+\item{na.rm}{(Logical) If `TRUE`, `NA`s will be ignored when calculating the
+selectivity coefficient (W).}
 }
 \value{
 A numeric vector.

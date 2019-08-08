@@ -4,12 +4,15 @@
 \alias{vs_electivity}
 \title{Vanderploeg and Scavia's relativised electivity, E*}
 \usage{
-vs_electivity(r, p)
+vs_electivity(r, p, na.rm = TRUE)
 }
 \arguments{
 \item{r}{(Numeric) Resource utilisation.}
 
 \item{p}{(Numeric) Resource availability.}
+
+\item{na.rm}{(Logical) If \code{TRUE}, \code{NA}s will be ignored when calculating the
+selectivity coefficient (W).}
 }
 \value{
 A numeric vector.
@@ -20,4 +23,5 @@ Vanderploeg and Scavia's relativised electivity, E*
 \examples{
 data(moth_distrib)
 vs_electivity(moth_distrib$r, moth_distrib$p)
+
 }
