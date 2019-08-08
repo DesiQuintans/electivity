@@ -21,7 +21,9 @@ selectivity coefficient (W).}
 A numeric vector.
 }
 \description{
-Chesson's alpha, or Vanderploeg and Scavia's selectivity coefficient (W)
+"The index is essentially an Ivlev forage ratio normalized so that the sum of all
+such ratios in a sample equals one (see Vanderploeg and Scavia 1979a)."
+- (Lechowicz 1982)
 }
 \examples{
 data(moth_distrib)

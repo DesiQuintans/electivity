@@ -1,6 +1,8 @@
 
 #' Ivlev's electivity, E
 #'
+#' Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
+#'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
 #'
@@ -10,6 +12,10 @@
 #' @examples
 #' data(moth_distrib)
 #' ivlev_electivity(moth_distrib$r, moth_distrib$p)
+#'
+#' @section Source:
+#' Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
+#' Oecologia 52, 22–30. https://doi.org/10.1007/BF00349007
 ivlev_electivity <- function(r, p) {
     apply(data.frame(r = r, p = p), 1,
           function(x) {
@@ -24,28 +30,42 @@ ivlev_electivity <- function(r, p) {
 
 #' Ivlev's forage ratio, E'
 #'
+#' Bounded between +0.1 (avoidance), +1.0 (random feeding), and infinity (preference).
+#'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
+#' @param log10 (Logical) If `TRUE`, transform the value with `log10()`.
 #'
 #' @return A numeric vector.
 #' @export
 #'
 #' @examples
 #' data(moth_distrib)
-#' ivlev_forage(moth_distrib$r, moth_distrib$p)
-ivlev_forage <- function(r, p) {
-    apply(data.frame(r = r, p = p), 1,
-          function(x) {
-              r <- x["r"]
-              p <- x["p"]
+#' ivlev_forage(moth_distrib$r, moth_distrib$p, log10 = FALSE)
+#' ivlev_forage(moth_distrib$r, moth_distrib$p, log10 = TRUE)
+#'
+#' @md
+ivlev_forage <- function(r, p, log10 = FALSE) {
+    Epr <- apply(data.frame(r = r, p = p), 1,
+                 function(x) {
+                     r <- x["r"]
+                     p <- x["p"]
 
-              r / p
-          })
+                     r / p
+                 })
+
+    if (log10 == TRUE) {
+        return(log10(Epr))
+    } else {
+        return(Epr)
+    }
 }
 
 
 
 #' Jacob's modified electivity, D
+#'
+#' Bounded between +0.1 (avoidance), +1.0 (random feeding), and infinity (preference).
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
@@ -68,20 +88,23 @@ jacob_electivity <- function(r, p) {
 
 
 
-#' Jacob's modified forage ratio, Q (log10)
+#' Jacob's modified forage ratio, Q
+#'
+#' When logged (which is Jacob's recommendation), bounded between negative and
+#' positive infinity.
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
-#' @param log (Logical) If TRUE, return the value as Log10.
+#' @param log10 (Logical) If TRUE, return the value as Log10.
 #'
 #' @return A numeric vector.
 #' @export
 #'
 #' @examples
 #' data(moth_distrib)
-#' jacob_forage(moth_distrib$r, moth_distrib$p, log = TRUE)
-#' jacob_forage(moth_distrib$r, moth_distrib$p, log = FALSE)
-jacob_forage <- function(r, p, log = TRUE) {
+#' jacob_forage(moth_distrib$r, moth_distrib$p, log10 = TRUE)
+#' jacob_forage(moth_distrib$r, moth_distrib$p, log10 = FALSE)
+jacob_forage <- function(r, p, log10 = FALSE) {
     q <- apply(data.frame(r = r, p = p), 1,
                function(x) {
                    r <- x["r"]
@@ -90,7 +113,7 @@ jacob_forage <- function(r, p, log = TRUE) {
                    (r * (1 - p)) / (p * (1 - r))
                })
 
-    if (log == TRUE) {
+    if (log10 == TRUE) {
         return(log10(q))
     } else {
         return(q)
@@ -100,6 +123,8 @@ jacob_forage <- function(r, p, log = TRUE) {
 
 
 #' Strauss' linear index, L
+#'
+#' Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
@@ -123,6 +148,10 @@ strauss_linear <- function(r, p) {
 
 
 #' Chesson's alpha, or Vanderploeg and Scavia's selectivity coefficient (W)
+#'
+#' "The index is essentially an Ivlev forage ratio normalized so that the sum of all
+#' such ratios in a sample equals one (see Vanderploeg and Scavia 1979a)."
+#' - (Lechowicz 1982)
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
@@ -160,6 +189,8 @@ chesson_alpha <- vs_select_coef <- function(r, p, na.rm = TRUE) {
 
 
 #' Vanderploeg and Scavia's relativised electivity, E*
+#'
+#' Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.

@@ -15,7 +15,7 @@ jacob_electivity(r, p)
 A numeric vector.
 }
 \description{
-Jacob's modified electivity, D
+Bounded between +0.1 (avoidance), +1.0 (random feeding), and infinity (preference).
 }
 \examples{
 data(moth_distrib)

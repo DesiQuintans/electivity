@@ -18,7 +18,7 @@ selectivity coefficient (W).}
 A numeric vector.
 }
 \description{
-Vanderploeg and Scavia's relativised electivity, E*
+Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
 }
 \examples{
 data(moth_distrib)

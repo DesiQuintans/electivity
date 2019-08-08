@@ -15,9 +15,16 @@ ivlev_electivity(r, p)
 A numeric vector.
 }
 \description{
-Ivlev's electivity, E
+Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
 }
+\section{Source}{
+
+Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
+Oecologia 52, 22–30. https://doi.org/10.1007/BF00349007
+}
+
 \examples{
 data(moth_distrib)
 ivlev_electivity(moth_distrib$r, moth_distrib$p)
+
 }

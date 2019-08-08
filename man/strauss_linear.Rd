@@ -15,7 +15,7 @@ strauss_linear(r, p)
 A numeric vector.
 }
 \description{
-Strauss' linear index, L
+Bounded between -1.0 (avoidance), 0 (random feeding), and +1.0 (preference).
 }
 \examples{
 data(moth_distrib)
