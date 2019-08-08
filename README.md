@@ -1,0 +1,2 @@
+# electivity
+Calculate electivity indices
