@@ -2,7 +2,7 @@
 % Please edit documentation in R/exported_funs.R
 \name{jacob_forage}
 \alias{jacob_forage}
-\title{Jacob's modified forage ratio, logQ}
+\title{Jacob's modified forage ratio, Q (log10)}
 \usage{
 jacob_forage(r, p, log = TRUE)
 }
@@ -17,9 +17,10 @@ jacob_forage(r, p, log = TRUE)
 A numeric vector.
 }
 \description{
-Jacob's modified forage ratio, logQ
+Jacob's modified forage ratio, Q (log10)
 }
 \examples{
 data(moth_distrib)
-jacob_forage(moth_distrib$r, moth_distrib$p)
+jacob_forage(moth_distrib$r, moth_distrib$p, log = TRUE)
+jacob_forage(moth_distrib$r, moth_distrib$p, log = FALSE)
 }
