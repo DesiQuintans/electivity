@@ -1,12 +1,12 @@
 Package: electivity
 Type: Package
-Title: Algorithms for electivity indices and measures of resource use versus availability
-Version: 0.1.0
+Title: Algorithms for 'Electivity' 'Indices' and Measures of Resource Use Versus Availability
+Version: 1.0.0
 Author: Desi Quintans
 Maintainer: Desi Quintans <science@desiquintans.com>
-Description: This package is basically Lechowicz (1982) turned into an R package. It 
-    includes all algorithms that were described therein, plus the example data that
-    was provided for gypsy moth resource utilisation.
+Description: Provides all 'electivity' algorithms that were examined in 'Lechowicz' 
+    (1982) including 'Vanderploeg' and 'Scavia' 'electivity', plus the example data 
+    that was provided for moth resource utilisation.
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.4.0)
