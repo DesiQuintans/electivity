@@ -4,18 +4,23 @@
 \name{moth_elect}
 \alias{moth_elect}
 \title{Electivities of gypsy moth larvae}
-\format{An object of class \code{data.frame} with 19 rows and 8 columns.}
+\format{A dataframe with 19 rows and 8 variables:
+\describe{
+\item{binomen}{Species of tree.}
+\item{E}{Ivlev's electivity index.}
+\item{E_prime_i}{Ivlev's forage ratio.}
+\item{D_i}{Jacob's modified electivity.}
+\item{log_Q_i}{Jacob's modified forage ratio, log10.}
+\item{L_i}{Strauss' linear index.}
+\item{W_i}{Chesson's alpha, or Vanderploeg and Scavia's selectivity coefficient.}
+\item{E_star_i}{Vanderploeg and Scavia's relativised electivity.}
+}}
 \usage{
 moth_elect
 }
 \description{
 This is Table 3 in the cited source paper.
 }
-\section{Author}{
-
-Martin Lechowicz
-}
-
 \section{Source}{
 
 Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.

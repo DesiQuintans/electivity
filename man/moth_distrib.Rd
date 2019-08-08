@@ -5,18 +5,23 @@
 \alias{moth_distrib}
 \title{Distribution of gypsy moth larvae, Lymantria dispar, feeding in a deciduous forest
 in southwestern Quebec, Canada.}
-\format{An object of class \code{data.frame} with 19 rows and 6 columns.}
+\format{A dataframe with 19 rows and 6 variables:
+\describe{
+\item{binomen}{Species of tree.}
+\item{n_indiv}{Number of randomly sampled trees.}
+\item{dbh_cm_sum}{Summed diameters at breast height, in centimeters.}
+\item{larva_mean_sum}{Summed numbers of larvae (the means of two counts taken
+on June 26-27, 1979 and July 3-4, 1979).}
+\item{r}{Relative proportion of larvae feeding on trees (Lechowicz 1982,
+Equation 2)}
+\item{p}{Estimate of foliage biomass (Lechowicz 1982, Equation 1).}
+}}
 \usage{
 moth_distrib
 }
 \description{
 This is Table 2 in the cited source paper.
 }
-\section{Author}{
-
-Martin Lechowicz
-}
-
 \section{Source}{
 
 Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
