@@ -13,9 +13,6 @@
 #' @examples
 #' # data(moth_distrib)
 #'
-#' @section Author:
-#' Martin Lechowicz
-#'
 #' @section Source:
 #' Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
 #' Oecologia 52, 22–30. https://doi.org/10.1007/BF00349007
@@ -33,9 +30,6 @@
 #'
 #' @examples
 #' # data(moth_elect)
-#'
-#' @section Author:
-#' Martin Lechowicz
 #'
 #' @section Source:
 #' Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
