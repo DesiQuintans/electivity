@@ -149,9 +149,7 @@ strauss_linear <- function(r, p) {
 
 #' Chesson's alpha, or Vanderploeg and Scavia's selectivity coefficient (W)
 #'
-#' "The index is essentially an Ivlev forage ratio normalized so that the sum of all
-#' such ratios in a sample equals one (see Vanderploeg and Scavia 1979a)."
-#' - (Lechowicz 1982)
+#' These two functions calculate the same value; alpha and W are identical.
 #'
 #' @param r (Numeric) Resource utilisation.
 #' @param p (Numeric) Resource availability.
@@ -163,12 +161,9 @@ strauss_linear <- function(r, p) {
 #'
 #' @examples
 #' data(moth_distrib)
-#' chesson_alpha(moth_distrib$r, moth_distrib$p)
 #'
-#' \dontrun{
-#' vs_select_coef(moth_distrib$r, moth_distrib$p)
-#' }
-chesson_alpha <- vs_select_coef <- function(r, p, na.rm = TRUE) {
+#' chesson_alpha(moth_distrib$r, moth_distrib$p)
+chesson_alpha <- function(r, p, na.rm = TRUE) {
     apply(data.frame(r = r, p = p, sigma = sum(r / p, na.rm = na.rm)), 1,
           function(x) {
               r <- x["r"]
@@ -179,12 +174,11 @@ chesson_alpha <- vs_select_coef <- function(r, p, na.rm = TRUE) {
           })
 }
 
-#' @name vs_select_coef
-#'
-#' @usage vs_select_coef(r, p, na.rm = TRUE)
-#'
+
 #' @rdname chesson_alpha
-"vs_select_coef"
+#' @examples vs_select_coef(moth_distrib$r, moth_distrib$p)
+#' @export
+vs_select_coef <- chesson_alpha
 
 
 

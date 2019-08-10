@@ -21,15 +21,11 @@ selectivity coefficient (W).}
 A numeric vector.
 }
 \description{
-"The index is essentially an Ivlev forage ratio normalized so that the sum of all
-such ratios in a sample equals one (see Vanderploeg and Scavia 1979a)."
-- (Lechowicz 1982)
+These two functions calculate the same value; alpha and W are identical.
 }
 \examples{
 data(moth_distrib)
-chesson_alpha(moth_distrib$r, moth_distrib$p)
 
-\dontrun{
+chesson_alpha(moth_distrib$r, moth_distrib$p)
 vs_select_coef(moth_distrib$r, moth_distrib$p)
-}
 }
