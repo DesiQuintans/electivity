@@ -1,6 +1,6 @@
 Package: electivity
 Type: Package
-Title: Algorithms for 'Electivity' 'Indices' and Measures of Resource Use Versus Availability
+Title: Algorithms for Electivity Indices
 Version: 1.0.0
 Author: Desi Quintans
 Maintainer: Desi Quintans <science@desiquintans.com>
