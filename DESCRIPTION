@@ -2,11 +2,13 @@ Package: electivity
 Type: Package
 Title: Algorithms for Electivity Indices
 Version: 1.0.0
-Author: Desi Quintans
-Maintainer: Desi Quintans <science@desiquintans.com>
+Authors@R: person("Desi", "Quintans", email = "science@desiquintans.com",
+                  role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3356-0293"))
 Description: Provides all electivity algorithms (including Vanderploeg and Scavia 
     electivity) that were examined in Lechowicz (1982) <doi:10.1007/BF00349007>, 
     plus the example data that were provided for moth resource utilisation.
+URL: https://github.com/DesiQuintans/electivity
+BugReports: https://github.com/DesiQuintans/electivity/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.4.0)
