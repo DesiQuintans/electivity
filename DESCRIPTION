@@ -4,9 +4,9 @@ Title: Algorithms for Electivity Indices
 Version: 1.0.0
 Author: Desi Quintans
 Maintainer: Desi Quintans <science@desiquintans.com>
-Description: Provides all 'electivity' algorithms that were examined in 'Lechowicz' 
-    (1982) including 'Vanderploeg' and 'Scavia' 'electivity', plus the example data 
-    that was provided for moth resource utilisation.
+Description: Provides all electivity algorithms (including Vanderploeg and Scavia 
+    electivity) that were examined in Lechowicz (1982) <doi:10.1007/BF00349007>, 
+    plus the example data that were provided for moth resource utilisation.
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.4.0)
