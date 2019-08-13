@@ -2,6 +2,13 @@ electivity: Algorithms for electivity indices and measures of resource
 use versus availability
 ================
 
+[![DOI](https://zenodo.org/badge/201148710.svg)](https://zenodo.org/badge/latestdoi/201148710)
+
+Desi Quintans (2019). *electivity: Algorithms for Electivity Indices.* R
+package version 1.0.2. <https://github.com/DesiQuintans/electivity>
+
+-----
+
 This package is essentially Lechowicz (1982) turned into an R package.
 It includes all algorithms that were described therein plus the example
 data that was provided for gypsy moth resource utilisation.
