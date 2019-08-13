@@ -2,6 +2,7 @@ Package: electivity
 Type: Package
 Title: Algorithms for Electivity Indices
 Version: 1.0.2
+Date: 2019-08-13
 Authors@R: person("Desi", "Quintans", email = "science@desiquintans.com",
                   role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3356-0293"))
 Description: Provides all electivity algorithms (including Vanderploeg and Scavia 
