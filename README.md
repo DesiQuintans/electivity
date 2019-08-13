@@ -115,10 +115,15 @@ df <- tibble::tribble(
 
 prefs <- 
     df %>% 
+    # Nest the data for each snail x site pair
     nest(-snail, -site) %>% 
+    # Apply vs_electivity() (or any other function) to each nested dataframe
     mutate(score = map(data, ~ vs_electivity(.$pieces_eaten, .$pieces_present))) %>% 
+    # Expand the result (score) into new rows
     unnest(score, data) %>% 
+    # Omit unwanted columns
     select(-pieces_eaten, -pieces_present) %>% 
+    # Turn the sites into columns that show electivity for each snail x food pair.
     spread(key = site, value = score)
 
 knitr::kable(prefs, format = "markdown")
