@@ -1,6 +1,13 @@
-## Resubmission changes
+## 1.0.2 resubmission changes
 
-Thank you for your comments.
+Thank you for your feedback.
+
+1. Commented examples were uncommented.
+
+
+## 1.0.1 resubmission changes
+
+Thank you for your feedback.
 
 1. Title was reduced to less than 65 characters.
 2. Single quotes were removed from non-software words in Title and Description.

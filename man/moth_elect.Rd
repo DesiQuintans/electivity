@@ -28,7 +28,7 @@ Oecologia 52, 22–30. https://doi.org/10.1007/BF00349007
 }
 
 \examples{
-# data(moth_elect)
+data(moth_elect)
 
 }
 \keyword{data}

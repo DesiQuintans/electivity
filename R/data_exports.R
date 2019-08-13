@@ -23,7 +23,7 @@
 #' }
 #'
 #' @examples
-#' # data(moth_distrib)
+#' data(moth_distrib)
 #'
 #' @section Source:
 #' Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
@@ -53,7 +53,7 @@
 #' }
 #'
 #' @examples
-#' # data(moth_elect)
+#' data(moth_elect)
 #'
 #' @section Source:
 #' Lechowicz, M.J., 1982. The sampling characteristics of electivity indices.
