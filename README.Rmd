@@ -111,3 +111,10 @@ prefs <-
 
 knitr::kable(prefs, format = "markdown")
 ```
+
+
+## Contributors
+
+- Desi Quintans https://github.com/DesiQuintans
+
+Contributions are welcome!

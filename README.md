@@ -144,3 +144,9 @@ knitr::kable(prefs, format = "markdown")
 | Ernie | Broccoli | \-0.2325581 | \-0.2222222 |
 | Ernie | Carrot   | \-0.3250000 |   0.0434783 |
 | Ernie | Kale     |   0.3026316 |   0.1200000 |
+
+## Contributors
+
+  - Desi Quintans <https://github.com/DesiQuintans>
+
+Contributions are welcome\!
