@@ -29,7 +29,7 @@ index (L).
 ## Installing
 
 ``` r
-# Installing from CRAN (not yet!)
+# Installing from CRAN
 install.packages(electivity)
 
 # Installing from GitHub
